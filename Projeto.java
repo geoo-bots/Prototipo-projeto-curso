@@ -1,3 +1,4 @@
+import java.text.ListFormat;
 import java.time.LocalDate;
 
 public class Projeto {
@@ -8,6 +9,9 @@ public class Projeto {
     private LocalDate dataConclusao;
     private String status; //(Ativo, Concluído, Cancelado)
     private String responsavel;
+    List <Tarefa> tarefas;
+    List <Usuario> participantes;
+
      //Lista<Tarefa> tarefas
     //Lista<Usuario> participantes
     public Projeto(long idProjeto, String nome, String descricao, LocalDate dataInicio, LocalDate dataConclusao,
