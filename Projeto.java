@@ -1,21 +1,16 @@
-import java.text.ListFormat;
-import java.time.LocalDate;
-
 public class Projeto {
-    private long idProjeto;
+    private int idProjeto;
     private String nome;
     private String descricao;
-    private LocalDate dataInicio;
-    private LocalDate dataConclusao;
-    private String status; //(Ativo, Concluído, Cancelado)
-    private String responsavel;
-    List <Tarefa> tarefas;
-    List <Usuario> participantes;
+    private String dataInicio;
+    private String dataConclusao;
+    private StatusProjeto status;
+    private Usuario responsavel;
+    private Tarefa [] tarefas;
+    private Usuario [] participantes;
 
-     //Lista<Tarefa> tarefas
-    //Lista<Usuario> participantes
-    public Projeto(long idProjeto, String nome, String descricao, LocalDate dataInicio, LocalDate dataConclusao,
-            String status, String responsavel) {
+    public Projeto(int idProjeto, String nome, String descricao, String dataInicio, String dataConclusao,
+            StatusProjeto status, Usuario responsavel) {
         this.idProjeto = idProjeto;
         this.nome = nome;
         this.descricao = descricao;
@@ -23,58 +18,143 @@ public class Projeto {
         this.dataConclusao = dataConclusao;
         this.status = status;
         this.responsavel = responsavel;
+        this.tarefas = new Tarefa[10];
+        this.participantes = new Usuario[10];
     }
-    public long getIdProjeto() {
+    
+
+    public int getIdProjeto() {
         return idProjeto;
     }
-    public void setIdProjeto(long idProjeto) {
+
+
+    public void setIdProjeto(int idProjeto) {
         this.idProjeto = idProjeto;
     }
+
+
     public String getNome() {
         return nome;
     }
+
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
     public String getDescricao() {
         return descricao;
     }
+
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public LocalDate getDataInicio() {
+
+
+    public String getDataInicio() {
         return dataInicio;
     }
-    public void setDataInicio(LocalDate dataInicio) {
+
+
+    public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
-    public LocalDate getDataConclusao() {
+
+
+    public String getDataConclusao() {
         return dataConclusao;
     }
-    public void setDataConclusao(LocalDate dataConclusao) {
+
+
+    public void setDataConclusao(String dataConclusao) {
         this.dataConclusao = dataConclusao;
     }
-    public String getStatus() {
+
+
+    public StatusProjeto getStatus() {
         return status;
     }
-    public void setStatus(String status) {
+
+
+    public void setStatus(StatusProjeto status) {
         this.status = status;
     }
-    public String getResponsavel() {
+
+
+    public Usuario getResponsavel() {
         return responsavel;
     }
-    public void setResponsavel(String responsavel) {
+
+
+    public void setResponsavel(Usuario responsavel) {
         this.responsavel = responsavel;
     }
 
-    public void adicionarTarefa(){
+
+    public Tarefa[] getTarefas() {
+        return tarefas;
+    }
+
+
+    public void setTarefas(Tarefa[] tarefas) {
+        this.tarefas = tarefas;
+    }
+
+
+    public Usuario[] getParticipantes() {
+        return participantes;
+    }
+
+
+    public void setParticipantes(Usuario[] participantes) {
+        this.participantes = participantes;
+    }
+
+
+    public void adicionarTarefa(Tarefa tarefa){
+        for(int i = 0; i<tarefas.length; i++){
+            if(tarefas[i]==null){
+                tarefas[i] = tarefa;
+                System.out.println("tarefa adicionada.");
+                return;
+            }
+        }
+        System.out.println("Tarefa não adicionada pela capacidade máxima.");
 
     }
-    public void removerTarefa(){
+   
 
+
+    public void removerTarefa(Tarefa tarefa){
+        for(int i= 0; i<tarefas.length;i++){
+            if(tarefas[i]!=null && tarefas[i].equals(tarefa)){
+                tarefas[i] = null;
+                System.out.println("tarefa removida.");
+                return;
+            }
+        }
     }
     
-    public void adicionarParticipante(){
-        
+    public void adicionarParticipante(Usuario participante){
+        for(int i = 0; i<participantes.length; i++){
+            if(participantes[i] == null){
+                participantes[i] = participante;
+                System.out.println("Participante adicionado.");
+                return;
+            }
+        }System.out.println("Não adicionado pelo excesso de participantes.");
     }
+
+    /*listar tarefas de teste:
+    public void listarTarefas(){
+    for(Tarefa tarefa : tarefas){
+    if(tarefas!=null){
+        sout("Título " + tarefa.getTitulo());
+        sout(informações adicionais)
+        sout("-------------------")
+    }}
+    }
+*/
 }
