@@ -1,11 +1,11 @@
-public enum StatusUser {
+public enum StatusUsuario {
     ATIVO("ATIVO"), 
     INATIVO("INATIVO"),
     BLOQUEADO("BLOQUEADO");
 
     private String status;
 
-    private StatusUser(String status) {
+    private StatusUsuario(String status) {
         this.status = status;
     }
 

@@ -147,13 +147,13 @@ public class Projeto {
         }System.out.println("Não adicionado pelo excesso de participantes.");
     }
 
-    /*listar tarefas de teste:
+    /*p listar tarefas de teste caso precise:
     public void listarTarefas(){
     for(Tarefa tarefa : tarefas){
     if(tarefas!=null){
-        sout("Título " + tarefa.getTitulo());
+        sout("título " + tarefa.getTitulo());
         sout(informações adicionais)
-        sout("-------------------")
+        sout("******************")
     }}
     }
 */

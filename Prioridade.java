@@ -1,4 +1,4 @@
-public enum PrioridadeTarefa {
+public enum Prioridade {
     BAIXA("Azul"),
     MEDIA("Lilás"),
     ALTA("Roxo");
@@ -7,7 +7,7 @@ public enum PrioridadeTarefa {
 
 
 
-    private PrioridadeTarefa(String cor) {
+    private Prioridade(String cor) {
         this.cor = cor;
     }
 

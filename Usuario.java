@@ -6,13 +6,13 @@ public class Usuario {
     private String email;
     private String senha;
     private String dataNasc;
-    private StatusUser status;
+    private StatusUsuario status;
     private Projeto [] projetos;
 
     
     
     public Usuario(int idUsuario, String nome, String descricao, String email, String senha, String dataNasc,
-            StatusUser status) {
+            StatusUsuario status, Projeto[] projetos) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.descricao = descricao;
@@ -42,16 +42,18 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-
     public String getDescricao() {
         return descricao;
     }
 
 
+
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+
 
 
     public String getEmail() {
@@ -64,11 +66,12 @@ public class Usuario {
     }
 
 
+
+
     public String getSenha() {
         return senha;
-    }
-
-
+}
+    
     public void setSenha(String senha) {
         this.senha = senha;
     }
@@ -81,18 +84,16 @@ public class Usuario {
 
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
-    }
+}
 
-
-    public StatusUser getStatus() {
+    public StatusUsuario getStatus() {
         return status;
     }
 
 
-    public void setStatus(StatusUser status) {
+    public void setStatus(StatusUsuario status) {
         this.status = status;
     }
-
 
     public Projeto[] getProjetos() {
         return projetos;
@@ -124,12 +125,10 @@ public class Usuario {
             return;
         }
     }
-    System.out.println("Capacidade máxima de responsáveis atingida");
+    System.out.println("Capacidade máxima atingida");
 }
 
-
-            
-        }
+    }
         
     
 

@@ -5,13 +5,13 @@ public class Tarefa {
     private String descricao;
     private String dataCriacao;
     private String dataConclusao;
-    private PrioridadeTarefa prioridade; 
+    private Prioridade prioridade; 
     private StatusTarefa status; 
     private Projeto idProjeto; 
     private Usuario responsavel;
     
     public Tarefa( int idTarefa,String titulo, String descricao, String dataCriacao, String dataConclusao,
-            PrioridadeTarefa prioridade, StatusTarefa status, Projeto idProjeto, Usuario responsavel) {
+            Prioridade prioridade, StatusTarefa status, Projeto idProjeto, Usuario responsavel) {
         this.idTarefa = idTarefa;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -107,7 +107,7 @@ public class Tarefa {
 
 
 
-    public PrioridadeTarefa getPrioridade() {
+    public Prioridade getPrioridade() {
         return prioridade;
     }
 
@@ -115,7 +115,7 @@ public class Tarefa {
 
 
 
-    public void setPrioridade(PrioridadeTarefa prioridade) {
+    public void setPrioridade(Prioridade prioridade) {
         this.prioridade = prioridade;
     }
 
