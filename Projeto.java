@@ -147,7 +147,7 @@ public class Projeto {
         }System.out.println("Não adicionado pelo excesso de participantes.");
     }
 
-    /*p listar tarefas de teste caso precise:
+    /*   pra listar tarefas de teste casoo precise:
     public void listarTarefas(){
     for(Tarefa tarefa : tarefas){
     if(tarefas!=null){
