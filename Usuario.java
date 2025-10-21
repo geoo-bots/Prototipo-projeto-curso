@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Usuario {
     
     private int idUsuario;
@@ -7,12 +9,13 @@ public class Usuario {
     private String senha;
     private String dataNasc;
     private StatusUsuario status;
-    private Projeto [] projetos;
+    private ArrayList<Projeto> projetos;
+    //private Projeto [] projetos;
 
     
     
     public Usuario(int idUsuario, String nome, String descricao, String email, String senha, String dataNasc,
-            StatusUsuario status, Projeto[] projetos) {
+            StatusUsuario status, ArrayList<Projeto> projetos) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.descricao = descricao;
@@ -20,8 +23,16 @@ public class Usuario {
         this.senha = senha;
         this.dataNasc = dataNasc;
         this.status = status;
-        this.projetos = new Projeto[10];
+        if (projetos != null) {
+        this.projetos = projetos;
+        } else {
+            this.projetos = new ArrayList<>();
     }
+        //antigo: this.projetos = new Projeto[10];
+    }
+
+
+ 
 
 
     public int getIdUsuario() {
@@ -29,9 +40,15 @@ public class Usuario {
     }
 
 
+
+
+
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
+
+
+
 
 
     public String getNome() {
@@ -39,12 +56,21 @@ public class Usuario {
     }
 
 
+
+
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
+
+
+
     public String getDescricao() {
         return descricao;
     }
+
 
 
 
@@ -56,9 +82,13 @@ public class Usuario {
 
 
 
+
     public String getEmail() {
         return email;
     }
+
+
+
 
 
     public void setEmail(String email) {
@@ -68,13 +98,21 @@ public class Usuario {
 
 
 
+
     public String getSenha() {
         return senha;
-}
-    
+    }
+
+
+
+
+
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+
+
 
 
     public String getDataNasc() {
@@ -82,27 +120,47 @@ public class Usuario {
     }
 
 
+
+
+
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
-}
+    }
+
+
+
+
 
     public StatusUsuario getStatus() {
         return status;
     }
 
 
+
+
+
     public void setStatus(StatusUsuario status) {
         this.status = status;
     }
 
-    public Projeto[] getProjetos() {
+
+
+
+
+    public ArrayList<Projeto> getProjetos() {
         return projetos;
     }
 
 
-    public void setProjetos(Projeto[] projetos) {
+
+
+
+    public void setProjetos(ArrayList<Projeto> projetos) {
         this.projetos = projetos;
     }
+
+
+
 
 
     public void login(String testeemail, String testeSenha){
@@ -116,7 +174,13 @@ public class Usuario {
         System.out.println(this.nome+ " deslogado. \n");
     }
 
-    public void atribuirProjeto(Projeto projeto) {
+
+    public void atribuirProjeto(Projeto projeto){
+        projetos.add(projeto);
+        projeto.setResponsavel(this);
+        System.out.println("Projeto atribuído a: "+ nome);
+    }
+    /*  public void atribuirProjeto(Projeto projeto) {
     for (int i = 0; i < projetos.length; i++) {
         if (projetos[i] == null) {
             projetos[i] = projeto;
@@ -127,7 +191,8 @@ public class Usuario {
     }
     System.out.println("Capacidade máxima atingida");
 }
-
+    código antigo comentado mas ainda utilizável.
+*/
     }
         
     
